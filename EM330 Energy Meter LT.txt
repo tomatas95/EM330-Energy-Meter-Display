@@ -1,0 +1,38 @@
+Tikslas:
+Šio projekto pagrindinis tikslas buvo perskaityti ir parodyti elektros skaitiklio EM330 pagrindinius parametrus - galią, srovę, įtampą ir kilovatvalandes, naudojant Carlo Gavazzi elektros skaitiklį. Šie duomenys yra atvaizduojami ant LCD ekrano (GME12864-41), prijungto prie Arduino Mega 2560. Žingsniai apėmė RS485 ryšio sujungimą, RS485 su TTL konverterio naudojimą ir Arduino sujungimą su GME12864-41 ekranu.
+
+Arduino Mega 2560:
+RS485 į TTL Konverteris:
+8 laidų sujungimas:
+EM330 Elektros Skaitiklis (Carlo Gavazzi):
+GME12864-41 Ekranas:
+
+RS485 Ryšio Sujungimas:
+
+RS485 ryšio sujungimas apėmė EM330 elektros skaitiklio RS485 lizdo sujungimą su atitinkamu RS485 su TTL konverteriu. Po to konverteris buvo prijungtas prie Arduino Mega 2560.
+
+RS485 į TTL Konverterio Sujungimas:
+
+RS485 į TTL konverteris buvo sujungtas su Arduino Mega 2560. Šis konverteris atliko svarbų vaidmenį konvertuojant RS485 signalus į TTL lygio signalus, užtikrinant sklandų ryšį tarp elektros skaitiklio ir Arduino.
+
+Arduino Mega 2560 buvo prijungtas prie GME12864-41 LCD ekrano. Ekranas buvo sukonfigūruotas rodyti surinktus elektros skaitiklio duomenis, įskaitant įtampą, srovę, galią ir kilovatus per valandą.
+
+• Maitinimo šaltinis: Matuoklio vidiniam veikimui reikalingas maitinimo šaltinis. Jį dažnai tiekia stebima elektros sistema.
+
+• Srovės matavimas: Matuoklis turi srovės transformatorius (CT), kurie užmaunami ant elektros laidininkų ir matuoja jais tekančią srovę. KT yra atsakingi už didelės srovės transformavimą linijoje iki tokio lygio, kurį gali tiksliai išmatuoti skaitiklis.
+
+• Įtampos matavimas: Matuoklis matuoja įtampą naudodamas potencialo transformatorius (PT). PT sumažina aukštą įtampą iki saugaus ir išmatuojamo lygio.
+
+• Ryšys: Daugelis šiuolaikinių energijos skaitiklių, įskaitant EM330, palaiko tokius ryšio protokolus kaip Modbus. Tai leidžia skaitikliui palaikyti ryšį su išoriniais prietaisais, pavyzdžiui, "Arduino", kad būtų galima gauti ir apdoroti duomenis.
+
+• Srovės transformatoriai (CT): Tai esminiai energijos skaitiklio srovės matavimo komponentai. Jie transformuoja didelę elektros linijų srovę į proporcingą mažą srovę, kurią galima saugiai matuoti. EM330 apsaugo ir  naudojami KT, užtikrina, kad būtų tikslus ir saugus srovės matavimas.
+
+• Srovės ribojimas: EM330 CT yra skirti tam tikram srovės diapazonai. Tad yra labai svarbu laikytis nurodytų srovės apribojimų.
+
+Įtampos Matavimas:
+• Potencialus Transformeriai (PTs): PT sumažina aukštą elektros linijų įtampą iki lygio, tinkamo matuoti energijos skaitikliu. Taip užtikrinama, kad skaitiklis gautų saugų ir tikslų įtampos vaizdą.
+
+• Skaitmeninio ryšio pinai: Kai EM330 sąveikauja su išoriniais prietaisais, pvz., Arduino, tai gali prireikti prisijungti per skaitmeninio ryšio pinus. Įprasti ryšio protokolai yra Modbus RTU arba Modbus TCP. Kadangi mes naudojome konverteri RS485 to TTL, šis konverteris atliko kaip prijungiamą funkciją tarp šių dviejų prietaisų (Arduino Mega 2560 ir EM330 energijos matuoklio).  Tam kad prijungti šiuos du prietaisus, mes prijungeme laidus GND prie Arduino Mega 2560 GND, ir tokia pat tvarka su TXD, RXD, VCC pinais.
+
+Apibendrinimas:
+Apibendrinant galima teigti, kad sėkmingai integravus energijos matuoklį EM330 su Arduino Mega 2560 ir LCD ekranu GME12864-41. Projektas sėkmingai pasiekia mūsų pagrindinį tikslą – sėkmingai nuskaityti duomenis iš energijos matuoklio EM330 ir gautus duomenis vizualizuoti LCD ekrane realiuoju laiku.

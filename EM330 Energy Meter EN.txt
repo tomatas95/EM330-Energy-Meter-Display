@@ -1,0 +1,37 @@
+Objective:
+The main objective of this project was to read and demonstrate the basic parameters of the EM330 electricity meter - power, current, voltage and kilowatt hours using a Carlo Gavazzi electricity meter. This data is displayed on an LCD display (GME12864-41) connected to an Arduino Mega 2560. The steps included connecting the RS485 connection, using an RS485 to TTL converter and connecting the Arduino to the GME12864-41 display.
+
+Arduino Mega 2560:
+RS485 to TTL Converter:
+8 wire connection:
+EM330 Electricity Meter (Carlo Gavazzi):
+GME12864-41 Display:
+
+RS485 Connection:
+
+The RS485 communication connection involved connecting the RS485 socket of the EM330 electric meter to the corresponding RS485 to TTL converter. The converter was then connected to the Arduino Mega 2560.
+
+RS485 to TTL Converter Connection:
+
+The RS485 to TTL converter was connected to the Arduino Mega 2560. This converter played an important role in converting RS485 signals to TTL level signals, ensuring a seamless connection between the power meter and the Arduino.
+
+The Arduino Mega 2560 was connected to a GME12864-41 LCD display. The display was configured to show the collected data from the electricity meter including voltage, current, power and kilowatts per hour.
+
+- Power supply: A power supply is required for the internal operation of the meter. This is often supplied by the monitored electrical system.
+
+- Current measurement: The meter has current transformers (CTs) which are placed on the electrical conductors and measure the current flowing through them. The CTs are responsible for transforming the high current in the line to a level that can be accurately measured by the meter.
+
+- Voltage measurement: The meter measures the voltage using potential transformers (PT). The PT reduces the high voltage to a safe and measurable level.
+
+- Communication: Many modern energy meters, including the EM330, support communication protocols such as Modbus. This allows the meter to communicate with external devices such as Arduino to receive and process data.
+
+- Current Transformers (CTs): These are essential components for measuring the current of an energy meter. They transform the high line current into a proportional low current that can be safely measured. The EM330 protects and uses CTs to ensure accurate and safe current measurement.
+
+- Current limiting: EM330 CTs are designed for specific current ranges. It is therefore very important to observe the specified current limits.
+
+Voltage Measurement:
+- Potential Transformers (PTs): PTs reduce high line voltages to a level suitable for measurement by an energy meter. This ensures that the meter obtains a safe and accurate voltage reading.
+
+- Digital communication pins: When the EM330 interacts with external devices such as an Arduino, it may need to be connected via digital communication pins. Common communication protocols are Modbus RTU or Modbus TCP. Since we used an RS485 to TTL converter, this converter acted as a pluggable function between the two devices (Arduino Mega 2560 and EM330 energy meter).  Ta
+
+Translated with DeepL.com (free version)
